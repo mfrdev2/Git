@@ -1,0 +1,15 @@
+echo "# JavaFx" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:mfrFRabbi/JavaFx.git
+git push -u origin main
+
+git reset --hard head~1 //remove commit change in localy (parmament delete from local and remote)
+  and then
+git push --force  //its remove commit changes or delete from githab.(parmament delete from local and remote)
+
+Remove commit locally but no effect on main code :                     git reset HEAD^
+force-push the new HEAD commit but no effect on main code:             git push origin +HEAD
+
