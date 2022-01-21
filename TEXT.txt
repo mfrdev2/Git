@@ -10,6 +10,20 @@ git reset --hard head~1 //remove commit change in localy (parmament delete from 
   and then
 git push --force  //its remove commit changes or delete from githab.(parmament delete from local and remote)
 
-Remove commit locally but no effect on main code :                     git reset HEAD^
+Remove commit locally but no effect on main code :                     git reset HEAD~
 force-push the new HEAD commit but no effect on main code:             git push origin +HEAD
+
+//create branch name
+git checkout -b "branchName"
+
+// delete branch locally
+git branch -d localBranchName
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+//code merge to main 
+git merge baranchName
+
+
 
