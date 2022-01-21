@@ -25,5 +25,10 @@ git push origin --delete remoteBranchName
 //code merge to main 
 git merge baranchName
 
+**branch list**
+git branch   (only local)
+git branch -r (only remote)
+git branch -a (both)
+
 
 
