@@ -43,5 +43,9 @@ git config --list
 
 git reset --hard //back to last commit.
 
+ssh-keygen
+-------------
+windows:: ssh-keygen (CMD)
+
 
 
