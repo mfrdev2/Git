@@ -47,5 +47,13 @@ ssh-keygen
 -------------
 windows:: ssh-keygen (CMD)
 
+maven jar package
+------------------
+mvn clean package spring-boot:repackage -Dspring.profiles.active=dev
+
+mvn clean  package -DskipTests=true
+
+java -jar xxxxx.jar --spring.profiles.active=dev
+
 
 
