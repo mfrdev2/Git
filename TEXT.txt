@@ -56,10 +56,24 @@ mvn clean  package -DskipTests=true
 java -jar xxxxx.jar --spring.profiles.active=dev
 
 
-Remove Folder from git 
+Remove the Folder from git 
 -----------------------
 rm -r app/build
 git rm -r app/build
+
+Change Git Remote Url
+------------------------
+git remote set-url <remote_name> <remote_url>
+..
+git remote set-url origin git@github.com:qprofeedback/android-feedback-app.git
+
+Show remote URL
+------------------
+git config --get remote.origin.url   // show one line
+
+git remote show origin // show details
+
+
 
 
 
