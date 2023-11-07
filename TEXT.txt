@@ -35,6 +35,8 @@ git branch -a (both)
 git config --global user.email "mdfazlerabbi.diu@gmail.com"
 git config --global user.password "xxxxxxxxx"
 
+git config user.email "xy@domain.com" // locally
+
 git config --global user.name
 git config --global user.email
 
