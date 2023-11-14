@@ -76,6 +76,23 @@ git config --get remote.origin.url   // show one line
 git remote show origin // show details
 
 
+//java cmd
+---------------------
+mvn clean
+mvn package "-Dactive.profile=ific-uat" "-DskipTests"
+
+mvn clean package spring-boot:repackage -Dspring.profiles.active=dev
+
+mvn clean  package -DskipTests=true
+
+//jar run with specific profile
+------------------------------------------
+
+java -jar hearing-kiosk-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+
+java -jar -Dhearing.location="custom-data" hearing-kiosk-api-1.0.jar --spring.profiles.active=rabbi
+
+
 
 
 
