@@ -85,12 +85,19 @@ mvn clean package spring-boot:repackage -Dspring.profiles.active=dev
 
 mvn clean  package -DskipTests=true
 
+ .\mvnw clean package
+
 //jar run with specific profile
 ------------------------------------------
 
 java -jar hearing-kiosk-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
 
 java -jar -Dhearing.location="custom-data" hearing-kiosk-api-1.0.jar --spring.profiles.active=rabbi
+
+//keycloak-custom-provider[cmd]
+docker ps
+docker cp target\a2i-remote-user-storage-provider.jar 9ac74c054008:\opt\keycloak\providers
+
 
 
 
