@@ -103,6 +103,42 @@ docker cp target\a2i-remote-user-storage-provider.jar 9ac74c054008:\opt\keycloak
 
 
 
+```
+
+    @Scheduled(fixedRate = 5000)
+    public void relayMessages() { //Run every 5 seconds
+        if (isRunning.compareAndSet(false, true)) {
+            try {
+                Instant now = dateTimeProvider.getInstant();
+                List<NotificationOutbox> messages = notificationOutboxService.findMessagesToDispatch(now);
+
+                log.info("Dispatching {} messages", messages.size());
+
+                messages.parallelStream().forEach(notificationOutbox -> {
+                    try {
+                        String name = notificationOutbox.getChannel().name();
+                        OutgoingMessageSender sender =
+                                operationBeanTypeFactory.getOperationTypeBean(name, OutgoingMessageSender.class);
+                        sender.send(notificationOutbox);
+                    } catch (Exception e) {
+                        log.error("Error relaying message {}", notificationOutbox.getId(), e);
+                    }
+                });
+
+            } finally {
+                isRunning.set(false);
+            }
+        } else {
+            log.warn("Previous relayMessages execution still running, skipping this cycle");
+        }
+    }
+
+    private final AtomicBoolean isRunning = new AtomicBoolean(false);
+
+```
+
+
+
 
 
 
