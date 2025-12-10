@@ -1,4 +1,5 @@
 ```
+file-upload-dir: E:\\Temp\\bbp-backend\\
 minio:
   url: https://xxx.com
   serviceName: s3
