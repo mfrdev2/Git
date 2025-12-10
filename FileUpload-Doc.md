@@ -35,6 +35,19 @@ minio:
 ```
 
 ```
+@Data
+@Component
+@ConfigurationProperties(prefix = "minio")
+public class MinioConfigProperties {
+    private String url;
+    private String bucketName;
+    private String serviceName;
+    private Credential credential;
+}
+
+```
+
+```
 
 @Slf4j
 @Component
