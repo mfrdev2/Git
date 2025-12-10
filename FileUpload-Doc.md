@@ -69,7 +69,7 @@ public class MinIOConfig {
 
 ```
 ```
-package com.dashboard.commons.config;
+
 
 import io.minio.credentials.Credentials;
 import io.minio.credentials.Provider;
@@ -246,7 +246,7 @@ public class STSCredentialsProvider implements Provider {
 ```
 
 ```
-package com.dashboard.commons.attachment;
+
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
